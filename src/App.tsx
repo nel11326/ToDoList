@@ -1,16 +1,15 @@
-import React from 'react';
-import './App.css';
+import NewTodo from "./components/NewTodo";
+import Todos from "./components/Todos";
+import TodosContextProvider from "./store/todos-context";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>This is my ToDoList</h1>
-      <h3>application where users can add, edit, delete, and mark tasks as completed. This project will help you understand CRUD operations and DOM manipulation.</h3>
+  
 
-      <li>Add, edit, and delete tasks.</li>
-      <li>Mark tasks as complete or incomplete.</li>
-      <li>Filter tasks based on status (all, completed, incomplete).</li>
-    </div>
+  return (
+    <TodosContextProvider>
+      <NewTodo />
+      <Todos />
+    </TodosContextProvider>
   );
 }
 
