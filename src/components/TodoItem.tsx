@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import classes from "./index.module.css";
+import Button from "../utils/buttons";
 
 const TodoItem: React.FC<{
   text: string;
@@ -31,11 +32,11 @@ const TodoItem: React.FC<{
       )}
       <div className={classes.actions}>
         {isEditing ? (
-          <button onClick={submitEditHandler}>Save</button>
+          <Button onClick={submitEditHandler}>Save</Button>
         ) : (
           <>
-            <button onClick={startEditingHandler}>Edit</button>
-            <button onClick={props.onRemoveTodo}>Delete</button>
+            <Button onClick={startEditingHandler}>Edit</Button>
+            <Button onClick={props.onRemoveTodo}>Delete</Button>
           </>
         )}
       </div>
